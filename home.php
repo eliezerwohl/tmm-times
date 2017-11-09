@@ -1,6 +1,6 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
-<div class="col-sm-9 main-gutter">
+<div class="col-md-9 main-gutter">
 
   <?php
 	global $post;	
@@ -13,7 +13,7 @@
 				<h4 class="line"><?php echo get_the_date(); ?></h4>
 				<?php $image = get_field('img'); ?>
 				<?php if($image){ ?>
-				<img class="article-img" src="<?php echo $image['sizes']['large']; ?>" title="<?php echo $image['title']; ?>" alt="<?php echo $image['alt']; ?>"> <?php } ?>
+				<img class="article-img" src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>"> <?php } ?>
 			</div>
 			<div>
 				<?php the_excerpt(); ?>
@@ -22,7 +22,7 @@
 				</a>
 			</div>
 			<div class="bottom">
-				<?php the_category( " | ");   ?>
+				Category: <?php the_category( " | ");   ?>
 				<span class="social-span">
 					<a title="Share on Facebook" href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="_blank">
 						<i class="fa fa-facebook-official" aria-hidden="true">

@@ -8,7 +8,7 @@
 		<a target="_blank" href="https://www.pinterest.com/<?php the_field('pinterest','option'); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
 	</div>
 	<div>
-		<a target="_blank" href="mailto:<?php the_field('email','option'); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact me</a>
+		<a class="contact-me" target="_blank" href="mailto:<?php the_field('email','option'); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact me</a>
 
 	</div>
 	<p>&copy; <?php echo date("Y"); ?> The Millennial Mom Times.  All rights reserved</p>

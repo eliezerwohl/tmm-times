@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" type="image/x-icon">
-	<title><?php wp_title('&raquo;','true','right'); ?><?php bloginfo('name'); ?></title>
+	<title>
+	<?php bloginfo('name'); ?></title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Raleway|UnifrakturMaguntia" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/styles/main.css">
@@ -28,7 +29,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand  visible-xs" href="<?php echo home_url(); ?>">The Millennial Mom Times</a>
+	      <a class="navbar-brand visible-xs" href="<?php echo home_url(); ?>">The Millennial Mom Times</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->

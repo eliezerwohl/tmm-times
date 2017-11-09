@@ -1,7 +1,7 @@
 <div class="sidebar col-md-3">
-	<div class="img">
+	<a href="<?php echo home_url(); ?>/about"><div class="img">
 		<?php $image = get_field('img', "option"); ?>
-		<img class="profile-pic" src="<?php echo $image['url']; ?>" title="<?php echo $image['title']; ?>" alt="<?php echo $image['alt']; ?>">
+		<img class="profile-pic" src="<?php echo $image['url']; ?>"  alt="<?php echo $image['alt']; ?>"></a>
 	</div>
 	<p class="about-me"><?php the_field("about_me", "option"); ?>
 	</p>
@@ -14,7 +14,7 @@
 	<div class="top-posts">
 		<h4>Top Posts</h4>
 		<?php 
-		$popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+		$popularpost = new WP_Query( array( 'posts_per_page' => 5, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
 		$counter = 0;
 		while ( $popularpost->have_posts() ) : $popularpost->the_post(); $counter++; ?>
 			<?php echo $counter; ?>. <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
