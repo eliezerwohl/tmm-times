@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="col-sm-9 main-gutter">
+<div class="col-md-9 main-gutter">
   <?php if ( have_posts() ) : ?>
     <h2 class="line"><?php single_cat_title(); ?></h2>
     <?php $myCount = $wp_query->found_posts;	?>
@@ -7,15 +7,16 @@
     while ( have_posts() ) : the_post(); $totalCounter++;   
     $counter++; ?>
       <?php if ($counter == 1) { echo "<div class='cat-row'>"; } ?>
-      <div class="col-md-6 outer-padding">
+      <div class="col-sm-6 outer-padding">
       <div class="article-container">
  
       <?php $image = get_field('img'); ?>
         <?php if($image){ ?>
-        <img  class="article-img" src="<?php echo $image['sizes']['medium']; ?>" title="<?php echo $image['title']; ?>" alt="<?php echo $image['alt']; ?>"> <?php } ?>
+        <a class="img-link" href="<?php the_permalink(); ?>">
+        <img  class="article-img" src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"></a> <?php } ?>
         <div class="inner-padding">
-        <h3><?php the_title(); ?></h3>
-        <p><?php echo get_excerpt_custom(); ?></p>
+        <a  class="title-link" href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+        <p><?php echo get_excerpt_custom(get_permalink()); ?></p>
         </div>
 
       <!-- <div>
@@ -39,7 +40,7 @@
     <?php endwhile; // End Loop
 
     else: ?>
-    <p>Sorry, no posts matched your criteria.</p>
+    <p>Sorry, no posts are here yet :(</p>
     <?php endif; ?>
   </div>
     <?php get_sidebar(); ?>
