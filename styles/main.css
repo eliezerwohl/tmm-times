@@ -18,7 +18,9 @@ h1, h2, h3, h4, h5, p {
 }
 
 .navbar-brand {
-	font-family:'UnifrakturMaguntia', cursive
+	font-family:'UnifrakturMaguntia', cursive;
+	font-size: 22px;
+	padding-top: 18px;
 }
 
 .line {
@@ -95,6 +97,12 @@ h1.title {
 @media(max-width: 767px){
 	#navbar li a {
 		font-size: 14px;
+	}
+	#navbar li a:hover, #navbar li a:active, #navbar li a:focus {
+		color:#23527c;
+	}
+	.navbar-brand:hover, .navbar-brand:active, .navbar-brand:focus {
+			opacity:0.7;
 	}
 }
 
@@ -294,7 +302,7 @@ h1.title {
 }
 
 @media (max-width:600px){
-	.main-gutter {
+	.category .main-gutter {
 		padding: 0px 0px;
 	}
 }
@@ -357,7 +365,7 @@ h1.title {
 
 @media (max-width: 767px){
 	.alignright, .alignleft {
-		padding: 0px;
+		padding: 0px 0px 10px;
 		float: none;
 		width: 100%;
 
