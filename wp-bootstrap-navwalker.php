@@ -118,7 +118,14 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
             foreach ( $atts as $attr => $value ) {
                if ( ! empty( $value ) ) {
                   $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-                  $attributes .= ' ' . $attr . '="' . $value . '"';
+                  //removes title
+                  if ($attr == "title"){
+                    $attributes .= '';
+                  }
+                  else {
+                    $attributes .= ' ' . $attr . '="' . $value . '"';
+                  }
+                  
                }
             }
             $item_output = $args->before;

@@ -40,7 +40,7 @@
     <?php endwhile; // End Loop
 
     else: ?>
-    <p>Sorry, no posts are here yet :(</p>
+    <div class="col-sm-12"><p>Sorry, no posts are here yet :(</p></div>
     <?php endif; ?>
   </div>
     <?php get_sidebar(); ?>
