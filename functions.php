@@ -45,7 +45,7 @@ $excerpt = strip_tags($excerpt);
 $excerpt = substr($excerpt, 0, 200);
 $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 $excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
-$excerpt = $excerpt.'... <a href="'. $url .'">more</a>';
+$excerpt = $excerpt.' [...] <a href="'. $url .'">more</a>';
 return $excerpt;
 }
 	// add_action( 'wp_default_scripts', 'move_jquery_into_footer' );
