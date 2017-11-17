@@ -8,10 +8,10 @@
 	<link rel="icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" type="image/x-icon">
 	<title>
 	<?php bloginfo('name'); ?></title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Raleway|UnifrakturMaguntia" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/styles/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">
-	 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 
@@ -39,7 +39,6 @@
                 'menu'              => 'primary',
                 'theme_location'    => 'primary',
                 'depth'             => 2,
-                'container_id'      => 'bs-example-navbar-collapse-1',
                 'menu_class'        => 'mobile-fix nav nav-justified',
                 'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                 'walker'            => new WP_Bootstrap_Navwalker())

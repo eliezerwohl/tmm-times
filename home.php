@@ -17,8 +17,8 @@
 			</div>
 			<div>
 				<?php the_excerpt(); ?>
-				<a href="<?php the_permalink(); ?>">
-					<button class="btn btn-md btn-default">Continue Reading</button>
+				<a class="btn btn-md btn-default" href="<?php the_permalink(); ?>">
+					Continue Reading
 				</a>
 			</div>
 			<div class="bottom">
@@ -32,7 +32,7 @@
 						<i class="fa fa-pinterest" aria-hidden="true">
 						</i>
 					</a>
-					<a title="Tweet it" href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&hashtags=MillennialMomTimes<?php $posttags = get_the_tags();if ($posttags) {foreach($posttags as $tag) {echo ',' . $tag->name; }}?>" target="_blank">
+					<a title="Tweet it" href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php echo urlencode(get_the_title()); ?>&hashtags=MillennialMomTimes<?php $posttags = get_the_tags();if ($posttags) {foreach($posttags as $tag) {echo ',' . $tag->name; }}?>" target="_blank">
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 					</a>
 					<a href="mailto:<?php the_field('email', 'option'); ?>?body=<?php echo urlencode(get_permalink()); ?>">

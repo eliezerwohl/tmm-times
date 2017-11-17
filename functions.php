@@ -1,18 +1,29 @@
 <?php 
 	add_theme_support( 'post-thumbnails' ); 
 	if( function_exists('acf_add_options_page') ) {
-
 	acf_add_options_page();
-	
 	}
-	function add_jquery() {
+function add_jquery() {
     wp_enqueue_script( 'jquery' );
   }    
-	add_action('init', 'add_jquery');
-		require_once('wp-bootstrap-navwalker.php');
+  add_action('init', 'add_jquery');
+  require_once('wp-bootstrap-navwalker.php');
 	register_nav_menus( array(
 	  'primary' => __( 'Primary Menu', 'primary' ),
 	) );
+
+    add_action( 'wp_default_scripts', 'move_jquery_into_footer' );
+
+function move_jquery_into_footer( $wp_scripts ) {
+
+    if( is_admin() ) {
+        return;
+    }
+    $wp_scripts->add_data( 'jquery', 'group', 1 );
+    $wp_scripts->add_data( 'jquery-core', 'group', 1 );
+    $wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
+}
+
 	function wpb_set_post_views($postID) {
     $count_key = 'wpb_post_views_count';
     $count = get_post_meta($postID, $count_key, true);
@@ -44,28 +55,13 @@ $excerpt = strip_shortcodes($excerpt);
 $excerpt = strip_tags($excerpt);
 $excerpt = substr($excerpt, 0, 200);
 $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-$excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
+// $excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
 $excerpt = $excerpt.' [...] <a href="'. $url .'">more</a>';
 return $excerpt;
 }
-	// add_action( 'wp_default_scripts', 'move_jquery_into_footer' );
-
-// function move_jquery_into_footer( $wp_scripts ) {
-
-//     if( is_admin() ) {
-//         return;
-//     }
-
-//     $wp_scripts->add_data( 'jquery', 'group', 1 );
-//     $wp_scripts->add_data( 'jquery-core', 'group', 1 );
-//     $wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
-// }
-
 function wpa_45815($arr){
     $arr['block_formats'] = 'Paragraph=p;Heading 3=h3;Heading 4=h4';
     return $arr;
   }
 add_filter('tiny_mce_before_init', 'wpa_45815');
-
-
 ?>
