@@ -1,8 +1,8 @@
 <div class="sidebar col-md-3">
 	<a href="<?php echo home_url(); ?>/about"><div class="img">
 		<?php $image = get_field('img', "option"); ?>
-		<img class="profile-pic" src="<?php echo $image['url']; ?>"  alt="<?php echo $image['alt']; ?>"></a>
-	</div>
+		<img class="profile-pic" src="<?php echo $image['url']; ?>"  alt="<?php echo $image['alt']; ?>">
+	</div></a>
 	<p class="about-me"><?php the_field("about_me", "option"); ?>
 	</p>
 	<div class="social-container">

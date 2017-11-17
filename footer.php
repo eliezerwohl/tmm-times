@@ -1,5 +1,5 @@
 
-</div></div></div>
+</div></div></div></div>
 <footer class="text-center">
 <div class="social-container">
 		<a target="_blank" href="https://www.facebook.com/<?php the_field('facebook','option'); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
