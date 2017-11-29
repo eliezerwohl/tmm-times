@@ -48,7 +48,7 @@
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-	<h1 class="title hidden-xs invisible-xs">The Millennial Mom Times</h1>
+	<h1 class="title hidden-xs invisible-xs"><a  href="<?php echo home_url(); ?>">The Millennial Mom Times</a></h1>
 <div id="main">
 	<div class="main-container container">
     <div class="row">
