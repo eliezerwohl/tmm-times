@@ -98,6 +98,13 @@ h1.title {
 	font-family: 'UnifrakturMaguntia', cursive;
 }
 
+h1.title a {
+	color: black !important;
+}
+
+h1.title a:hover {
+	opacity: .7;
+}
 .main-container {
 	margin-bottom: 50px;
 }
@@ -160,7 +167,8 @@ h1.title {
 }
 
 .page-template-home .article-container .line,
-.single .article-container .line  {
+.single .article-container .line,
+.page-template-about .line {
 	margin-bottom: 25px;
 }
 
@@ -301,6 +309,14 @@ h1.title {
 	text-align: center;
 }
 
+.btn-holder a {
+	margin-bottom: 50px;
+}	 
+.btn-holder .next-post {
+	float: right;
+
+}
+
 /*Category */
 
 .category .inner-padding a.title-link {
@@ -396,6 +412,11 @@ h1.title {
  .alignright, .alignleft {
  	max-width: 100%;
  	height: auto;
+ }
+
+ .aligncenter {
+ 	text-align: center;
+ 	display: block; margin-left: auto; margin-right: auto;
  }
 
 .alignleft {

@@ -3,10 +3,11 @@
 <div class="col-md-9 main-gutter">
 
   <?php
-	global $post;	
-	$args = array( 'posts_per_page' => 5);
-	$myposts = get_posts( $args );
-	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+	global $post;
+	$paged = (get_query_var('page')) ? get_query_var('page') : 1;	
+	$args = array( 'posts_per_page' => 5, 'paged' => $paged, 'post_type' => 'post');
+	$postslist = new WP_Query( $args );
+	while ( $postslist->have_posts() ) : $postslist->the_post();  ?>
 		<div class="article-container">
 			<div class="text-center">
 				<h2><?php the_title(); ?></h2>
@@ -17,8 +18,8 @@
 			</div>
 			<div>
 				<?php the_excerpt(); ?>
-				<a class="btn btn-md btn-default" href="<?php the_permalink(); ?>">
-					Continue Reading
+				<a href="<?php the_permalink(); ?>">
+					<button class="btn btn-md btn-default">Continue Reading</button>
 				</a>
 			</div>
 			<div class="bottom">
@@ -32,7 +33,7 @@
 						<i class="fa fa-pinterest" aria-hidden="true">
 						</i>
 					</a>
-					<a title="Tweet it" href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php echo urlencode(get_the_title()); ?>&hashtags=MillennialMomTimes<?php $posttags = get_the_tags();if ($posttags) {foreach($posttags as $tag) {echo ',' . $tag->name; }}?>" target="_blank">
+					<a title="Tweet it" href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&hashtags=MillennialMomTimes<?php $posttags = get_the_tags();if ($posttags) {foreach($posttags as $tag) {echo ',' . $tag->name; }}?>" target="_blank">
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 					</a>
 					<a href="mailto:<?php the_field('email', 'option'); ?>?body=<?php echo urlencode(get_permalink()); ?>">
@@ -45,9 +46,11 @@
 				</span>
 			</div>
 		</div>
-	<?php endforeach; wp_reset_postdata();?>
+	<?php endwhile; ?>
+	<div class="btn-holder">
+    <?php next_posts_link( '&laquo; Older', $postslist->max_num_pages ); ?>
+    <?php previous_posts_link( 'Recent &raquo;' ); ?> </div>
+		<?php wp_reset_postdata();?>
 </div>
-
-  	<?php get_sidebar(); ?>
-  
+<?php get_sidebar(); ?>  
 <?php get_footer(); ?>

@@ -12,7 +12,7 @@
 
 	</div>
 	<p>&copy; <?php echo date("Y"); ?> The Millennial Mom Times.  All rights reserved</p>
-	<p>Website created by <a target="_blank" href="http://www.eandvdesign.com">E and V Design</a></p>
+	<p>Website created by <a target="_blank" href="https://www.eandvdesign.com">E and V Design</a></p>
 	<?php wp_footer(); ?>
 
 	</footer>

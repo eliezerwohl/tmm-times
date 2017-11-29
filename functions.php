@@ -64,4 +64,14 @@ function wpa_45815($arr){
     return $arr;
   }
 add_filter('tiny_mce_before_init', 'wpa_45815');
+
+add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes_2');
+
+function posts_link_attributes_1() {
+    return 'class="prev-post"';
+}
+function posts_link_attributes_2() {
+    return 'class="next-post"';
+}
 ?>
